@@ -1,7 +1,7 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
-from flask_marshmallow import Marshmallow
+from flask_restplus import Api
 import os
 from config import app_config
 
@@ -12,8 +12,8 @@ app.config.from_object(app_config[ENV])
 app.config.from_pyfile('config.py')
 
 db = SQLAlchemy(app)
-ma = Marshmallow(app)
 migrate = Migrate(app, db)
+api = Api(app)
 
 # important to load the models after db init and migrate
 from app import models
