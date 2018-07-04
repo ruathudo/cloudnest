@@ -8,6 +8,8 @@ class User(db.Model):
     id = Column(Integer, primary_key=True)
     first_name = Column(String(100), nullable=False)
     last_name = Column(String(100), nullable=False)
+    username = Column(String(100), unique=True)
+    password = Column(String(100), nullable=True)
     email = Column(String(100), unique=True, nullable=False)
     avatar = Column(String(100), nullable=True)
     time_created = Column(DateTime(timezone=True), default=db.func.now())
