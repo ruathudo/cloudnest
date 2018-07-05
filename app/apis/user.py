@@ -8,5 +8,5 @@ api = Namespace('users')
 class UserResource(Resource):
 
     def get(self, username):
-        '''Get user info'''
-        return User.query.filter_by(username=username).one()
+        """Get user info"""
+        return User.query.filter_by(username=username).all()
