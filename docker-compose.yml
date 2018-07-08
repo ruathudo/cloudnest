@@ -1,0 +1,22 @@
+version: "3"
+
+services:
+  backend:
+    restart: always
+    build: .
+    env_file: ./instance/app.env
+    volumes:
+      - .:/app
+    depends_on:
+    - database
+    ports:
+      - "5000:5000"
+
+  database:
+    restart: always
+    image: postgres:latest
+    env_file: ./instance/db.env
+    volumes:
+      - ./postgres-data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"

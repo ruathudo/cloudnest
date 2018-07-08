@@ -11,6 +11,7 @@ flask-marshmallow = "*"
 flask-restplus = "*"
 marshmallow-sqlalchemy = "*"
 "psycopg2-binary" = "*"
+gunicorn = "*"
 
 [dev-packages]
 "flake8" = "*"
