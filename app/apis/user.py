@@ -4,9 +4,10 @@ from app.models import User
 api = Namespace('users')
 
 
-@api.route('/<username>')
-class UserResource(Resource):
+@api.route('/<id>')
+class UserAPI(Resource):
 
-    def get(self, username):
+    def get(self, uid):
         """Get user info"""
-        return User.query.filter_by(username=username).all()
+        return User.query.filter_by(id=uid).all()
+

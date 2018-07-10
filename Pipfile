@@ -9,9 +9,11 @@ flask-migrate = "*"
 flask-sqlalchemy = "*"
 flask-marshmallow = "*"
 flask-restplus = "*"
+flask-jwt-simple = "*"
 marshmallow-sqlalchemy = "*"
 "psycopg2-binary" = "*"
 gunicorn = "*"
+webargs = "*"
 
 [dev-packages]
 "flake8" = "*"
