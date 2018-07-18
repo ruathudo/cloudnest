@@ -9,6 +9,8 @@ services:
       - .:/app
     depends_on:
     - database
+    links:
+      - "database:localhost"
     ports:
       - "5000:5000"
 
