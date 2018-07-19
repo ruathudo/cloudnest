@@ -5,6 +5,9 @@ class Config(object):
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     # USE_X_SENDFILE = True
     # Put any configurations here that are common across all environments
+    APISPEC_TITLE = "Cloud Nest"
+    APISPEC_SWAGGER_UI_URL = "/docs"
+    APISPEC_VERSION = "v1"
 
 
 class DevelopmentConfig(Config):
