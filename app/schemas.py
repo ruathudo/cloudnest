@@ -1,8 +1,9 @@
 from marshmallow import fields, validate
-from app import ma
+from app import ma, rest
 from app.models import User
 
 
+@rest.definition('User')
 class UserSchema(ma.ModelSchema):
     first_name = fields.Str(validate.Length(max=100, error='INVALID_FIRST_NAME'))
     last_name = fields.Str(validate.Length(max=100, error='INVALID_LAST_NAME'))
@@ -12,4 +13,6 @@ class UserSchema(ma.ModelSchema):
 
     class Meta:
         model = User
+        strict = True
+        ordered = True
         exclude = ['password']

@@ -1,4 +1,3 @@
-# from flask_restplus import Namespace, Resource, fields
 # from app.models import User
 #
 # api = Namespace('auth')

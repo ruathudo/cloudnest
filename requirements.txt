@@ -2,11 +2,11 @@ alembic==1.0.0
 apispec==0.39.0
 click==6.7
 Flask==1.0.2
-flask-apispec==0.7.0
 Flask-Cors==3.0.6
 Flask-JWT-Simple==0.0.3
 flask-marshmallow==0.9.0
 Flask-Migrate==2.2.1
+flask-rest-api==0.7.0
 Flask-SQLAlchemy==2.3.2
 gunicorn==19.9.0
 itsdangerous==0.24
