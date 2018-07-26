@@ -25,8 +25,9 @@ rest = Api(app)
 # important to load the models after db init and migrate
 from app import models
 
-# import api endpoints
-from app.api import *
+# import api endpoints to rest api
+from app.api import load_resources
+load_resources(rest)
 
 
 @app.route('/')

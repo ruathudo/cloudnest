@@ -5,9 +5,10 @@ from app.models import User
 from app.schemas import UserSchema
 from app.core.utils import AppException
 from app.core.auth import check_user_exist
+from app.api import PREFIX_VERSION
 
-
-api = Blueprint('User', __name__, url_prefix='/api/users')
+# create api blueprint
+api = Blueprint('User', __name__, url_prefix=PREFIX_VERSION + '/users')
 
 
 @api.route('/<int:id>', methods=['GET'])
@@ -21,7 +22,7 @@ def get_user(id):
 
 
 @api.route('/', methods=['POST'])
-@api.arguments(UserSchema, location="json")
+@api.arguments(UserSchema(only=('username',)))
 @api.response(UserSchema)
 def create_user(args):
     user = check_user_exist(username=args.username, email=args.email)

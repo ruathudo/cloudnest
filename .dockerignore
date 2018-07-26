@@ -1,5 +1,4 @@
 .git
-Dockerfile
 .DS_Store
 .gitignore
 .dockerignore
@@ -143,3 +142,4 @@ ENV/
 .vscode/
 .idea/
 client/
+postgresql
