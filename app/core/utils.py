@@ -1,5 +1,5 @@
 from flask import jsonify
-from app import app
+from app.core import core
 
 
 class AppException(Exception):
@@ -18,7 +18,7 @@ class AppException(Exception):
         return rv
 
 
-@app.errorhandler(AppException)
+@core.errorhandler(AppException)
 def handle_invalid_usage(error):
     response = jsonify(error.to_dict())
     response.status_code = error.status_code

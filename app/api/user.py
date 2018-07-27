@@ -22,7 +22,7 @@ def get_user(id):
 
 
 @api.route('/', methods=['POST'])
-@api.arguments(UserSchema(only=('username',)))
+@api.arguments(UserSchema(exclude=['username', 'avatar']))
 @api.response(UserSchema)
 def create_user(args):
     user = check_user_exist(username=args.username, email=args.email)

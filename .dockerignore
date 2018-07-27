@@ -142,4 +142,4 @@ ENV/
 .vscode/
 .idea/
 client/
-postgresql
+postgres
