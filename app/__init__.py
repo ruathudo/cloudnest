@@ -6,7 +6,6 @@ from flask_jwt_simple import JWTManager
 from flask_cors import CORS
 from flask_rest_api import Api
 
-from config import app_config
 
 # init 3rd party
 db = SQLAlchemy()
@@ -16,11 +15,10 @@ migrate = Migrate()
 rest = Api()
 
 
-def create_app(env):
+def create_app(configs):
 
-    app = Flask('Cloud Nest', instance_relative_config=True)
-    app.config.from_object(app_config[env])
-    app.config.from_pyfile('config.py')
+    app = Flask('Cloud Nest')
+    app.config.from_object(configs)
     CORS(app)
 
     db.init_app(app)

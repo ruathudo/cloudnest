@@ -18,7 +18,7 @@ class AppException(Exception):
         return rv
 
 
-@core.errorhandler(AppException)
+@core.app_errorhandler(AppException)
 def handle_invalid_usage(error):
     response = jsonify(error.to_dict())
     response.status_code = error.status_code
