@@ -90,12 +90,11 @@ ENV/
 
 # pycharm
 .idea
-rest_client
 
-app/static/firmware
+# app
 app/uploads
 
 .DS_Store
 .vscode
-postgres-data
 postgres
+.pytest_cache
