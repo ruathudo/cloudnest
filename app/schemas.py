@@ -20,4 +20,11 @@ class UserSchema(ma.ModelSchema):
         model = User
         strict = True
         ordered = True
-        # exclude = ['password']
+
+
+class UserExtSchema(ma.Schema):
+    """
+    User schema with extra keys
+    """
+    token = fields.Str(dump_only=True)
+    user = fields.Nested(UserSchema)
